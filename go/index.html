@@ -30,40 +30,39 @@
 <body>
 <main>
   <h1>Conversation Tree <span aria-hidden="true">→</span></h1>
-  <p id="msg">Redirecting to the plugin page…</p>
+  <p id="msg">Redirecting…</p>
   <p><a id="fallback" href="https://github.com/chriswang/dsh-conversation-tree#readme" rel="noopener">Continue manually</a></p>
-  <p class="note">channel: <code id="ch">(none)</code> · if this link is broken, install with
+  <p class="note">channel: <code id="ch">(none)</code> · install:
     <code>dsh plugin --profile web add dsh-conversation-tree</code></p>
 </main>
 <script>
 (function () {
+  // Destinations. Default = GitHub repo (README starts with the install command).
+  // ?to=npm switches to the npm package page; extra keys are convenience aliases.
   var DEST = {
     github: 'https://github.com/chriswang/dsh-conversation-tree#readme',
     npm: 'https://www.npmjs.com/package/dsh-conversation-tree',
     awesome: 'https://awesome-dsh-plugin.com/p/chriswang/dsh-conversation-tree/',
     dshso: 'https://www.dsh.so/artifact/dsh-conversation-tree-2/'
   };
-  // ?c=<channel> -> destination. Social/community channels land on the GitHub
-  // README (install command first); directory links stay inside the directory.
-  var CHANNELS = {
-    v2ex: 'github', zhihu: 'github', x: 'github', twitter: 'github',
-    devto: 'github', dshbase: 'github', jike: 'github', wechat: 'github',
-    reddit: 'github', hackernews: 'github', lcz: 'github', outros: 'github',
-    awesome: 'awesome', npm: 'npm', dshso: 'dshso'
-  };
+  // Recognised channel labels (?c=...). They all land on GitHub by default; the
+  // label exists so link-by-link traffic can be attributed later (analytics).
+  var CHANNELS = [
+    'v2ex', 'zhihu', 'x', 'twitter', 'devto', 'dshbase', 'awesome',
+    'reddit', 'bili', 'bilibili', 'jike', 'wechat', 'hackernews',
+    'lcz', 'npm', 'dshso', 'github'
+  ];
   var q;
   try { q = new URLSearchParams(location.search); } catch (e) { q = { get: function () { return null; } }; }
   var c = (q.get('c') || '').toLowerCase().replace(/[^a-z0-9._-]/g, '').slice(0, 32);
-  var key = CHANNELS[c] || 'github';
+  if (c && CHANNELS.indexOf(c) === -1) { c = 'other-' + c; } // unknown: keep for attribution, still GitHub
   var to = (q.get('to') || '').toLowerCase();
-  if (Object.prototype.hasOwnProperty.call(DEST, to)) key = to;
+  var key = Object.prototype.hasOwnProperty.call(DEST, to) ? to : 'github';
   var url = DEST[key];
   var chEl = document.getElementById('ch');
   if (chEl) { chEl.textContent = c || '(none)'; }
   var fb = document.getElementById('fallback');
   if (fb) { fb.href = url; }
-  var msg = document.getElementById('msg');
-  if (msg) { msg.textContent = 'Redirecting…'; }
   setTimeout(function () { location.replace(url); }, 60);
 })();
 </script>
