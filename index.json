@@ -1,8 +1,8 @@
 {
   "format": 1,
   "title": {
-    "en": "chriswang's DSH plugins",
-    "zh": "chriswang 的 DSH 插件"
+    "en": "orchivo's DSH plugins",
+    "zh": "orchivo 的 DSH 插件"
   },
   "plugins": [
     {
@@ -16,10 +16,10 @@
         "zh": "会话列旁的一条可折叠栏：把对话按工作区与主题组织成树，并就地打开真实会话。"
       },
       "icon": "icons/dsh-conversation-tree.svg",
-      "author": "chriswang",
-      "homepage": "https://github.com/chriswang/dsh-conversation-tree#readme",
+      "author": "orchivo",
+      "homepage": "https://github.com/orchivo/dsh-conversation-tree#readme",
       "repository": {
-        "url": "https://github.com/chriswang/dsh-conversation-tree"
+        "url": "https://github.com/orchivo/dsh-conversation-tree"
       },
       "versions": [
         {
