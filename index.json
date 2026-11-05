@@ -4,6 +4,40 @@
     "en": "orchivo's DSH plugins",
     "zh": "orchivo 的 DSH 插件"
   },
+  "description": {
+    "en": "Plugins by orchivo — starting with Conversation Tree.",
+    "zh": "orchivo 的 DSH 插件，从对话树开始。"
+  },
+  "metadata": {
+    "categories": {
+      "ui": {
+        "title": {
+          "en": "UI enhancements",
+          "zh": "界面增强"
+        }
+      }
+    },
+    "labels": {
+      "model-tools": {
+        "title": {
+          "en": "9 model tools",
+          "zh": "9 个模型工具"
+        }
+      },
+      "archive": {
+        "title": {
+          "en": "Archive",
+          "zh": "归档"
+        }
+      },
+      "bilingual": {
+        "title": {
+          "en": "Bilingual UI",
+          "zh": "中英双语"
+        }
+      }
+    }
+  },
   "plugins": [
     {
       "name": "dsh-conversation-tree",
@@ -12,14 +46,43 @@
         "zh": "对话树"
       },
       "description": {
-        "en": "A collapsible column beside the conversation: organise conversations into a tree by workspace and topic, and open the real sessions in place.",
-        "zh": "会话列旁的一条可折叠栏：把对话按工作区与主题组织成树，并就地打开真实会话。"
+        "en": "Turn DSH's flat conversation list into a collapsible tree by workspace → topic — drag to file, status at a glance, and 9 model tools let the model maintain it for you.",
+        "zh": "把 DSH 的对话列表变成一棵可折叠的树：按「工作区 → 主题 → 对话」归类，拖动即可整理，状态一眼可见，9 个模型工具让助手替你维护。"
       },
       "icon": "icons/dsh-conversation-tree.svg",
       "author": "orchivo",
       "homepage": "https://github.com/orchivo/dsh-conversation-tree#readme",
       "repository": {
         "url": "https://github.com/orchivo/dsh-conversation-tree"
+      },
+      "metadata": {
+        "category": "ui",
+        "keywords": [
+          "conversation tree",
+          "conversation",
+          "workspace",
+          "topic",
+          "organise",
+          "organize",
+          "sidebar",
+          "archive",
+          "search",
+          "mindmap",
+          "model tools",
+          "对话树",
+          "对话整理",
+          "工作区",
+          "主题",
+          "侧边栏",
+          "归档",
+          "搜索",
+          "脑图"
+        ],
+        "labels": [
+          "model-tools",
+          "archive",
+          "bilingual"
+        ]
       },
       "versions": [
         {
